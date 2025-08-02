@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IP ADDRESS TRACKER</title>
+  <link href="output.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+
+<body class="bg-cover bg-no-repeat bg-top bg-[#2b2d42]" style="background-image: url('images/pattern-bg-desktop.png');">
+
+  <!-- Title -->
+  <h1 class="text-center mt-10 font-bold text-4xl text-white">IP Address Tracker</h1>
+
+  <!-- Input Section -->
+  <div class="flex justify-center w-full mt-4">
+    <input id="ipholder" type="search" placeholder="Search for any IP address or domain"
+      class="w-[450px] pl-9 h-12 rounded-l-[15px] mt-4">
+    <button class="bg-black rounded-r-[15px] size-12 mt-4 flex items-center justify-center" onclick="display()">
+      <img src="images/icon-arrow.svg" alt="arrow" />
+    </button>
+  </div>
+
+  <!-- Map Section with Overlaid Info Card -->
+  <div class="relative w-full h-[500px] mt-10">
+    <!-- Leaflet Map -->
+    
+
+    <!-- Info Card -->
+    <div class="absolute top-6 left-1/2 transform -translate-x-1/2 z-10 bg-white rounded-[15px] shadow-lg flex flex-col sm:flex-row justify-around divide-y sm:divide-y-0 sm:divide-x-2 divide-gray-300 items-center w-11/12 sm:w-3/4 p-4 sm:h-36 text-center sm:text-left">
+      <div class="px-6">
+        <p class="text-xs text-gray-500">IP ADDRESS</p>
+        <span id="ipdisplay" class="font-bold text-[15px]"></span>
+      </div>
+      <div class="px-6">
+        <p class="text-xs text-gray-500">LOCATION</p>
+        <span id="locationdisplay" class="font-bold text-[15px]"></span>
+      </div>
+      <div class="px-6">
+        <p class="text-xs text-gray-500">TIMEZONE</p>
+        <span id="timezone" class="font-bold text-[15px]"></span>
+      </div>
+      <div class="px-6">
+        <p class="text-xs text-gray-500">ISP</p>
+        <span id="isp" class="font-bold text-[15px]"></span>
+      </div>
+    </div>
+
+    <div id="map" class="absolute top-[120px] left-0 w-full h-[calc(100%-120px)] z-0"></div>
+
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
